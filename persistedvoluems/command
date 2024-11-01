@@ -1,0 +1,14 @@
+kubectl.exe exec -it postgres-0 bash
+
+root@postgres-0:/# psql --username=admin postgresdb
+
+
+CREATE TABLE DAN(
+ID int PRIMARY KEY not null,
+name varchar(10) not null
+);
+
+
+\dt - show tables
+
+\q - quit from the DB

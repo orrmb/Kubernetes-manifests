@@ -1,0 +1,8 @@
+cd kubernetes/daemonsets
+
+#create 1 light worker node in kubernetes
+
+kind create cluster --name helm --image kindest/node:v1.31.1
+
+kubectl get nodes
+
