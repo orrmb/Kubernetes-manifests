@@ -1,0 +1,15 @@
+deployment:
+  image: "aimvector/python"
+  tag: "1.0.4"
+  name: example-app-2
+
+secret:
+  name: example-secret-2
+
+service:
+  name: example-service-2
+
+configmap:
+  name: example-config-map-2
+
+
