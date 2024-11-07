@@ -100,4 +100,5 @@ There are two way we can create app in the ArgoCD:
     ![alt text](Pic/image-3.png)
     ![alt text](Pic/image-4.png)
     ![alt text](Pic/image-5.png)
-    ![alt text](Pic/image-6.png) ![alt text](Pic/image-7.png)
+    ![alt text](Pic/image-6.png)
+    ![alt text](Pic/image-7.png)
