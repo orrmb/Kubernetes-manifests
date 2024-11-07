@@ -45,41 +45,59 @@ Linux@Kubernetes# kubectl get secrets -n argocd argocd-initial-admin-secret -o j
 
 ```
 
-![alt text](ArgoCD/Pic/image.png)
+![alt text](Pic/image.png)
 
 There are two way we can create app in the ArgoCD:
 
-1. With yaml file
-   For example:
-   ```yaml
-   apiVersion: argoproj.io/v1alpha1
-   kind: Application
-   metadata:
-   name: example-app
-   namespace: argocd
-   spec:
-   project: default
-   source:
-   repoURL: https://github.com/marcel-dempers/docker-development-youtube-series.git
-   targetRevision: HEAD
-   path: argo/example-app
-   directory:
-   recurse: true
-   destination:
-   server: https://kubernetes.default.svc
-   namespace: example-app
-   syncPolicy:
-   automated:
-   prune: false
-   selfHeal: false
-   ```
-   Create app for ArgoCD:
+1.  With yaml file-
+    For example:
 
-```bash
-Linux@Kubernetes# kubectl -n argocd apply -f app.yaml
+    ```yaml
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+    name: example-app
+    namespace: argocd
+    spec:
+    project: default
+    source:
+    repoURL: https://github.com/marcel-dempers/docker-development-youtube-series.git
+    targetRevision: HEAD
+    path: argo/example-app
+    directory:
+    recurse: true
+    destination:
+    server: https://kubernetes.default.svc
+    namespace: example-app
+    syncPolicy:
+    automated:
+    prune: false
+    selfHeal: false
+    ```
 
-application.argoproj.io/example-app created
-```
+    Create app for ArgoCD:
 
-After why apply the Yaml, the app create for us in ArgoCD:
-![alt text]()
+    ```bash
+        Linux@Kubernetes# kubectl -n argocd apply -f app.yaml
+
+        application.argoproj.io/example-app created
+    ```
+
+    After why apply the Yaml, the app create for us in ArgoCD:
+
+    ![alt text](Pic/image-1.png)
+
+    <br>
+
+2.  Manualy-
+
+    1. In ArgoCD dashboard click Application
+    2. click NEW APP
+    3. Enter the Application Name,Project Name, SYNC Policy(e.g Automatic), Your Repo URL, Some Cluster, Namespace and more...
+    4. We can edit with yaml this paramets
+    5. After we done click on create button
+
+    ![alt text](Pic/image-3.png)
+    ![alt text](Pic/image-4.png)
+    ![alt text](Pic/image-5.png)
+    ![alt text](Pic/image-6.png) ![alt text](Pic/image-7.png)
