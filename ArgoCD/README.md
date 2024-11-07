@@ -127,7 +127,17 @@ replicaset.apps/example-deploy-79c5687bf8   2         2         2       53m
 
 ArgoCD give us monitoring option, we can see the logs from resources, see thiers yaml file and more..
 
-For example, data of one of the pods in the cluster
+For example, data of one of the pods in the cluster:
 ![alt text](Pic/image-10.png)
 
 Let's change the image that the pod run with from aimvector/python:1.0.1 to aimvector/python:1.0.1 and what happend.
+
+ArgoCD Deploy for us new pods, this pods run the new image we change in the yaml file
+![alt text](Pic/image-11.png)
+
+The stats of one of the new pods:
+![alt text](Pic/image-12.png)
+
+New image new pods.
+
+After the Update, the old image pods will terminated.
