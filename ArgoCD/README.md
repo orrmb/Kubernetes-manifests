@@ -1,5 +1,7 @@
 ## Install ArgoCD
 
+First, Let's install ArgoCD in the our Kubernetes Cluster.
+
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
@@ -126,4 +128,6 @@ replicaset.apps/example-deploy-79c5687bf8   2         2         2       53m
 ArgoCD give us monitoring option, we can see the logs from resources, see thiers yaml file and more..
 
 For example, data of one of the pods in the cluster
-![alt text](image-10.png)
+![alt text](Pic/image-10.png)
+
+Let's change the image that the pod run with from aimvector/python:1.0.1 to aimvector/python:1.0.1 and what happend.
