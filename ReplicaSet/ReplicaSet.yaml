@@ -17,3 +17,5 @@ spec:
       containers:
         - name: myapp
           image: orrmb/mogo-k8s
+
+

@@ -12,8 +12,11 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s http
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 export KUBE_EDITOR="nano"
+```
 
-# test cluster access:
+test cluster access:
+
+```
 /work # kubectl get nodes
 NAME                    STATUS   ROLES    AGE   VERSION
 helm-control-plane   Ready    master   26m   v1.26.0
