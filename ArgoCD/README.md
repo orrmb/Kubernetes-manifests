@@ -64,18 +64,18 @@ There are two way we can create app in the ArgoCD:
     spec:
     project: default
     source:
-    repoURL: https://github.com/marcel-dempers/docker-development-youtube-series.git
-    targetRevision: HEAD
-    path: argo/example-app
-    directory:
-    recurse: true
+      repoURL: https://github.com/orrmb/Kubernetes-manifests.git
+      targetRevision: HEAD
+      path: ArgoCD/example-app
+      directory:
+      recurse: true
     destination:
-    server: https://kubernetes.default.svc
-    namespace: example-app
+      server: https://kubernetes.default.svc
+      namespace: example-app
     syncPolicy:
-    automated:
-    prune: false
-    selfHeal: false
+      automated:
+      prune: false
+      selfHeal: false
     ```
 
     Create app for ArgoCD:
