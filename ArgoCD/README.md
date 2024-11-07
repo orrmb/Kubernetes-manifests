@@ -1,6 +1,6 @@
 ## Install ArgoCD
 
-First, Let's install ArgoCD in the our Kubernetes Cluster.
+First, let's install ArgoCD in the our Kubernetes Cluster.
 
 ```
 kubectl create namespace argocd
@@ -133,6 +133,7 @@ For example, data of one of the pods in the cluster:
 Let's change the image that the pod run with from aimvector/python:1.0.1 to aimvector/python:1.0.1 and what happend.
 
 ArgoCD Deploy for us new pods, this pods run the new image we change in the yaml file
+
 ![alt text](Pic/image-11.png)
 
 The stats of one of the new pods:
