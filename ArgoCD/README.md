@@ -95,10 +95,29 @@ There are two way we can create app in the ArgoCD:
     2. click NEW APP
     3. Enter the Application Name,Project Name, SYNC Policy(e.g Automatic), Your Repo URL, Some Cluster, Namespace and more...
     4. We can edit with yaml this paramets
-    5. After we done click on create button
 
     ![alt text](Pic/image-3.png)
     ![alt text](Pic/image-4.png)
     ![alt text](Pic/image-5.png)
     ![alt text](Pic/image-6.png)
-    ![alt text](Pic/image-7.png)
+
+    5. After we done, click on create button.
+
+After Argo Sync with our repo, he wil Deploy us the app and create the resource according to the yaml files in the repo.
+![alt text](Pic/image-8.png)
+
+```bash
+ Linux@Kubernetes# kubectl get all -n example-app
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/example-deploy-79c5687bf8-4f997   1/1     Running   0          53m
+pod/example-deploy-79c5687bf8-jmkvr   1/1     Running   0          53m
+
+NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/svc-example-app   LoadBalancer   10.110.112.14   localhost     80:32335/TCP   48m
+
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/example-deploy   2/2     2            2           53m
+
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/example-deploy-79c5687bf8   2         2         2       53m
+```
