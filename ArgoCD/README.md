@@ -38,7 +38,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 ```
 
-The user name is admin and the secret we need to get from the secrets:
+The username is admin and the secret we need to get from the secrets:
 
 ```bash
 Linux@Kubernetes# kubectl get secrets -n argocd argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 --decode
@@ -50,6 +50,7 @@ Linux@Kubernetes# kubectl get secrets -n argocd argocd-initial-admin-secret -o j
 There are two way we can create app in the ArgoCD:
 
 1.  With yaml file-
+
     For example:
 
     ```yaml
@@ -91,10 +92,10 @@ There are two way we can create app in the ArgoCD:
 
 2.  Manualy-
 
-    1. In ArgoCD dashboard click Application
-    2. click NEW APP
+    1. In ArgoCD dashboard click _Application_
+    2. click _NEW APP_
     3. Enter the Application Name,Project Name, SYNC Policy(e.g Automatic), Your Repo URL, Some Cluster, Namespace and more...
-    4. We can edit with yaml this paramets
+    4. We can edit with yaml this parameters
 
     ![alt text](Pic/image-3.png)
     ![alt text](Pic/image-4.png)
@@ -121,3 +122,8 @@ deployment.apps/example-deploy   2/2     2            2           53m
 NAME                                        DESIRED   CURRENT   READY   AGE
 replicaset.apps/example-deploy-79c5687bf8   2         2         2       53m
 ```
+
+ArgoCD give us monitoring option, we can see the logs from resources, see thiers yaml file and more..
+
+For example, data of one of the pods in the cluster
+![alt text](image-10.png)
